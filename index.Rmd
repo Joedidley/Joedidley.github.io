@@ -7,5 +7,5 @@ output: html_document
 # I've a lot of work to do here...
 #### My first website from github
 
-My final project for the Data Analysis course can be found [here](file:///Users/JacobJames/Desktop/Joedidley.github.io/COVID-19.html)
+My final project for the Data Analysis course can be found [here](https://joedidley.github.io/COVID-19.html)
 but the formating is wonky when I use the link...
