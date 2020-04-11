@@ -9,4 +9,3 @@ output: html_document
 
 My final project for the Data Analysis course can be found [here](file:///Users/JacobJames/Desktop/Joedidley.github.io/COVID-19.html)
 but the formating is wonky when I use the link...
-
