@@ -7,8 +7,6 @@ output: html_document
 # I've a lot of work to do here...
 ## I'll work on it
 
-My Exam 3 can be found [here](https://joedidley.github.io/Exam_3/html)
+My Exam 3 can be found [here](https://joedidley.github.io/Exam_3.html) 
 
-My final project for the Data Analysis course can be found [here](https://joedidley.github.io/COVID-19.html)
-but it's still a work in progress
-
+My final project for the Data Analysis course can be found [here](https://joedidley.github.io/COVID-19.html) and is mostly complete 
