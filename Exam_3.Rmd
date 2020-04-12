@@ -1,0 +1,153 @@
+---
+title: "Exam 3"
+author: "James"
+date: "4/11/2020"
+output: html_document
+theme: superhero
+number_sections: TRUE
+---
+
+<style type="text/css">
+.main-container {
+  max-width: 1800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
+<style>
+div.blue { background-color:#78bdcf; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "blue">
+
+
+
+<style>
+div.lightblue { background-color:#d7f3fa; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "lightblue">
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### This is how I did exam 3
+#### for Data Analysis
+***
+***
+
+First, load the packages and the data:
+```{r, message=FALSE,warning=FALSE,echo=TRUE}
+library(tidyverse)
+library(GGally)
+library(modelr)
+library(sjPlot)
+library(dplyr)
+data("mtcars")
+```
+
+
+Next,look at the data:
+```{r,message=FALSE,warning=FALSE}
+ggpairs(mtcars)
+```
+
+
+
+This looks like a lot of data. We are trying to find possible relationships between __mpg__ and the other variables. We use the *sort* function to show the correlation values between the given variables:
+
+```{r,message=FALSE}
+sort(cor(mtcars)[1,])
+```
+We can see that __wt__ and __cyl__ are signicicant (although they are negative, meaning that when __mpg__ goes up, both __wt__ and __cyl__ go down).
+
+##### What does it mean when we say they are signicifant?
+The correlation coefficient r measures the strength and direction of a linear relationship between two variables on a scatterplot. The value of r is always between +1 and -1. 
+
+* 1 = a perfectly linear, positive relationship
+* 0 = no relationship
+* -1 = a perfectly linear, negative relationship
+
+***
+
+#### Now, get the p-value
+
+The cor.test function returns several values, including the p-value from the test of significance.
+
+* p < 0.05 = the correlation is likely significant
+* p > 0.05 indicates it is not
+
+
+```{r, message=FALSE,warning=FALSE}
+cortest <- cor.test(mtcars$mpg, as.numeric(mtcars$wt))
+cortest$p.value; cortest$conf.int
+```
+
+From the above result it is seen that the p-value is 1.293 × 10^-10. This is much less than 0.05; hence, significant corelation.
+
+We will also run this test for the __cyl__ variable:
+```{r,message=FALSE,warning=FALSE}
+cortest <- cor.test(mtcars$mpg, as.numeric(mtcars$cyl))
+cortest$p.value; cortest$conf.int
+```
+Again, the small p-value indicates that it is significant.
+
+***
+
+So, we will be using the column __mpg__ as our dependent variable (y-axis) and build a quick plot showing its relationship to __wt__ and __cyl__:
+```{r,message=FALSE,warning=FALSE}
+ggplot(mtcars, aes(x=wt,y=mpg,color=cyl)) +
+  geom_point() +
+  geom_smooth(method="lm",se=FALSE) +
+  theme_minimal()
+```
+
+
+Looks like there is a relationship between __hp__ and __mpg__, and that this varies based on __cyl__. Let's build a simple model:
+```{r,message=TRUE,warning=FALSE}
+mod <- glm(data=mtcars,formula = mpg ~ wt * cyl)
+mod
+```
+
+Before moving on, let's create another model, swapping __hp__ with __cyl__ and compare it 
+```{r,message=TRUE,warning=FALSE}
+mod2 <- glm(data=mtcars,formula = mpg ~ wt * hp)
+mod2
+```
+
+Let's also look at their summaries in order to compare the R^2 values
+
+```{r,message=TRUE}
+summary(lm(mod))$r.squared
+```
+
+```{r,message=TRUE}
+summary(lm(mod2))$r.squared
+```
+
+
+
+
+* R Squared for model 1 = 0.86
+* R Squared for model 2 = 0.88
+
+#### What does this mean?
+Interpreting the R squared value, we say that model 1 explains 86% of the variance, whereas model 2 explains 88% of the variance. Thus, model 2 is a more accurate measure for predicting mpg, and we should continue onward with using model 2. 
+
+###### This is a bit of a over-simplification, as a high R-squared value is not necessarily an accurate representation of reality. Similarly, a low value isn't necessarily bad either. It all depends on the data set!
+
+
+
+Use the modelr package to make predictions from our model. Pipe that new data frame straight into ggplot to compare reality with the model predictions:
+```{r,warning=FALSE,message=FALSE}
+add_predictions(mtcars,mod2) %>%
+  ggplot(aes(x=wt)) +
+  geom_point(aes(y=pred),color="Red",shape=2) +
+  geom_point(aes(y=mpg,color=hp))
+```
+
+
+
+### So what?
+
+We can see most of the predicted values are relatively close. Well, it at least follows a the negative trend... Was our model perfect? No. Was it horrible? Dr. Zahn might think so. But I think it looks okay. 
