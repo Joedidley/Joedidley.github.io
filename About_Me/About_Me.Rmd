@@ -1,0 +1,38 @@
+---
+output: 
+html_document:
+code_folding: hide
+pagetitle: About Me
+---
+
+<style type="text/css">
+.main-container {
+  max-width: 1800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
+<style>
+div.blue { background-color:#78bdcf; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "blue">
+
+
+
+<style>
+div.lightblue { background-color:#d7f3fa; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "lightblue">
+
+## [HOME](https://github.com/Joedidley/Joedidley.github.io) | [ABOUT ME](https://github.com/Joedidley/Joedidley.github.io/About_Me/) | [WORK](https://github.com/Joedidley/Joedidley.github.io/Work/) | [CODING](https://github.com/Joedidley/Joedidley.github.io/Coding/) | [RESEARCH](https://github.com/Joedidley/Joedidley.github.io/Research) 
+
+<div style= "float:right;position: relative;top:20px">
+```{r, out.width = "250px",echo=FALSE}
+knitr::include_graphics("./UVU_logo.png")
+```
+</div>
+
+### This will have random information about me. If I'm feeling cute, maybe I'll throw in a pic
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
