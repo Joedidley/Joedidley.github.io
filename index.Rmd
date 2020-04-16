@@ -1,12 +1,47 @@
 ---
-title: "Website"
-output: html_document
+output: 
+    html_document
+code_folding: hide
 ---
+<style type="text/css">
+.main-container {
+  max-width: 1800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
+<style>
+div.blue { background-color:#78bdcf; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "blue">
 
 
-# I've a lot of work to do here...
-## I'll work on it
 
-My Exam 3 can be found [here](https://joedidley.github.io/Exam_3.html) 
+<style>
+div.lightblue { background-color:#d7f3fa; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "lightblue">
 
-My final project for the Data Analysis course can be found [here](https://joedidley.github.io/COVID-19.html) and is mostly complete 
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(rmarkdown)
+```
+## [HOME](https://github.com/Joedidley/Joedidley.github.io) | [ABOUT ME](https://github.com/Joedidley/Joedidley.github.io/About_Me/) | [WORK](https://github.com/Joedidley/Joedidley.github.io/Work/) | [CODING](https://github.com/Joedidley/Joedidley.github.io/Coding/) | [RESEARCH](https://github.com/Joedidley/Joedidley.github.io/Research) 
+
+
+## Jacob James
+
+### Information:
+
+**Email:**  jkejames22@icloud.com
+<br>
+**Number:** (480) 201-JAKE
+<br>
+
+***
+***
+***
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
