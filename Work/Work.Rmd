@@ -1,0 +1,36 @@
+---
+output: 
+html_document:
+code_folding: hide
+pagetitle: Work
+---
+
+<style type="text/css">
+.main-container {
+  max-width: 1800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
+<style>
+div.blue { background-color:#78bdcf; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "blue">
+
+
+
+<style>
+div.lightblue { background-color:#d7f3fa; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "lightblue">
+
+## [HOME](https://github.com/Joedidley/Joedidley.github.io) | [ABOUT ME](https://github.com/Joedidley/Joedidley.github.io/About_Me/) | [WORK](https://github.com/Joedidley/Joedidley.github.io/Work/) | [CODING](https://github.com/Joedidley/Joedidley.github.io/Coding/) | [RESEARCH](https://github.com/Joedidley/Joedidley.github.io/Research) 
+
+
+
+### This will list previous and current employment information
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
