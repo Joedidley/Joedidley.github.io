@@ -2,7 +2,15 @@
 output: 
     html_document
 code_folding: hide
+
 ---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(rmarkdown)
+library(knitr)
+```
+
+
 <style type="text/css">
 .main-container {
   max-width: 1800px;
@@ -24,14 +32,11 @@ div.lightblue { background-color:#d7f3fa; border-radius: 5px; padding: 20px;}
 <div class = "lightblue">
 
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-library(rmarkdown)
-```
+
 ## [HOME](https://joedidley.github.io/) | [ABOUT ME](https://joedidley.github.io/About_Me/) | [WORK](https://joedidley.github.io//Work/) | [CODING](https://joedidley.github.io//Coding/) | [RESEARCH](https://joedidley.github.io//Research) 
 
 
-## Jacob James
+# Jacob James
 
 ### Information:
 
