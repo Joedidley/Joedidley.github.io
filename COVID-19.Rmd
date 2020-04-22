@@ -10,13 +10,12 @@ output:
     theme: flatly
 ---
 
-<style type="text/css">
 
-.chart-title {  /* chart_title  */
-   font-size: 30px;
-   font-family: Algerian;
+```{r, include=FALSE}
+#load 'coronavirus' package (if not already above)
+devtools::install_github("covid19r/coronavirus", force = TRUE)
+```
 
-</style>
 
 ```{r setup, include=FALSE}
 #load packages
@@ -38,10 +37,6 @@ library(xaringan)
 
 ```
 
-```{r, include=FALSE}
-#load 'coronavirus' package (if not already above)
-devtools::install_github("covid19r/coronavirus", force = TRUE)
-```
 
 ```{r, include=FALSE}
 #check if there is a data update on the Github version
