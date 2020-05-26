@@ -40,7 +40,7 @@ library(xaringan)
 
 ```{r, include=FALSE}
 #check if there is a data update on the Github version
-coronavirus::update_datasets(silence = TRUE)
+coronavirus::update_dataset(silence = TRUE)
 #load data set
 data("coronavirus")
 `%>%` <- magrittr::`%>%`
